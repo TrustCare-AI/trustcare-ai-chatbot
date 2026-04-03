@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustCare Medical AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+    <div class="chat-container" id="chatContainer">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="logo">
+                <div class="pulse-dot"></div>
+                TrustCare <span>AI</span>
+            </div>
+            <button id="newChatBtn" class="new-chat-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                New Chat
+            </button>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="avatar">AI</div>
+                <div class="bubble">
+                    Hello! I'm your AI diagnostic assistant.<br><br>
+                    Please describe your symptoms in a natural language sentence (e.g. "I have a headache and a fever.")
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <footer class="chat-input-area">
+            <form id="chatForm">
+                <input type="text" id="userInput" placeholder="Describe symptoms..." autocomplete="off" required />
+                <button type="submit" id="sendBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
